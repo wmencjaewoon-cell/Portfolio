@@ -20,6 +20,8 @@ export default function Home() {
     if (!e) return alert("이메일을 입력하세요.");
 
     const emailRedirectTo = `${window.location.origin}/auth/callback`;
+    console.log("emailRedirectTo =", emailRedirectTo);
+    alert(`redirect: ${emailRedirectTo}`);
 
     const { error } = await supabase.auth.signInWithOtp({
       email: e,
